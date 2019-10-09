@@ -1,0 +1,5 @@
+tap "moncho/dry"
+brew "container-diff"
+brew "dive"
+brew "dry"
+cask "docker"
