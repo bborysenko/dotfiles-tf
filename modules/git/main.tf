@@ -8,16 +8,11 @@ resource "null_resource" "git" {
   }
 }
 
-data "template_file" "gitconfig" {
-  template = "${file("${path.module}/templates/gitconfig")}"
-  vars = {
-    user_name  = var.user_name
-    user_email = var.user_email
-  }
-}
-
 resource "local_file" "gitconfig" {
-  content         = "${data.template_file.gitconfig.rendered}"
+  content = templatefile("${path.module}/templates/gitconfig", {
+    user = var.user
+    alias = var.alias
+  })
   filename        = "${pathexpand("~/.gitconfig")}"
   file_permission = "0644"
 }

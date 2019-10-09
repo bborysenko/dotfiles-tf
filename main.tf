@@ -4,9 +4,7 @@ module "homebrew" {
 
 module "git" {
   source = "./modules/git"
-
-  user_name  = "Borys Borysenko"
-  user_email = "borys.borysenko@gmail.com"
+  user = var.git.user
 }
 
 module "docker" {

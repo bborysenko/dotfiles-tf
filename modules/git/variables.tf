@@ -1,7 +1,13 @@
-variable "user_name" {
-  type = "string"
+variable "user" {
+  description = "Setting commit username and email address"
+  type = object({
+    name  = string
+    email = string
+  })
 }
 
-variable "user_email" {
-  type = "string"
+variable "alias" {
+  description = "Setting git aliases"
+  type = string
+  default = ""
 }
