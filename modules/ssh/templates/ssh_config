@@ -1,0 +1,9 @@
+# Use keychain to store passphrase
+# https://developer.apple.com/library/content/technotes/tn2449/
+IgnoreUnknown UseKeychain
+UseKeychain yes
+IgnoreUnknown AddKeysToAgent
+AddKeysToAgent yes
+
+# Include the custom configuration files
+Include config.*
